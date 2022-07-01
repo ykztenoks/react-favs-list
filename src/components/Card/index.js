@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import { Toaster, toast } from "react-hot-toast";
 export function Card(props) {
   const [movie, setMovie] = useState([]);
 
@@ -20,11 +20,13 @@ export function Card(props) {
 
   function handleAddMovie(current) {
     props.setForm({ ...props.form, movie: [...props.form.movie, current] });
+    toast.success("Filme adicionado a lista!");
   }
 
   return movie.map((currentElement) => {
     return (
       <div className="d-flex flex-column m-4 mb-5 col-3">
+        <Toaster />
         <div className="card" style={{ width: "18rem" }}>
           <img
             src={`https://image.tmdb.org/t/p/w500/${currentElement.poster_path}`}

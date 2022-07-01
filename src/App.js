@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import axios from "axios";
 import { CreateList } from "./pages/CreateList";
 import { ListInfo } from "./pages/ListInfo";
 import { MovieInfo } from "./pages/MovieInfo";
@@ -10,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create-list" element={<CreateList />} />
-        <Route path="/list/:userid" element={<ListInfo />} />
+        <Route path="/list-info/:id" element={<ListInfo />} />
         <Route path="/movie-info" element={<MovieInfo />} />
       </Routes>
     </div>
